@@ -8,18 +8,19 @@
         {
             InitializeComponent();
         }
-
-        private void OnCounterClicked(object sender, EventArgs e)
+      private void Roller_Cliked(object sender, EventArgs e)
         {
-            count++;
+            string? line = Console.ReadLine();
+            Random rnd = new Random();
+            if (!int.TryParse(line, out int picker) || picker <= 0)
+            {
+                picker = 10;
+            }
+            for (uint ctr = 1; ctr <= picker; ctr++)
+                Console.WriteLine($"{rnd.Next(),15:N0}");
+        } 
+        
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
-        }
     }
 
 }
