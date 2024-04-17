@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DiceRoller.MainPage">
 
-    <ScrollView>
+    <ScrollView
+        Background="#cccccc"
+        >
         <VerticalStackLayout
             Spacing="25"
             Padding="30,0"
@@ -15,8 +17,8 @@
                 HorizontalOptions="Center" />
 
             <Label
-                Text="Numero"
-                x:Name="Roller"
+                Text=""
+                x:Name="ResultLabel"
                 HorizontalOptions="Center"
                 />
             <Picker
@@ -25,21 +27,22 @@
                 HorizontalOptions="Center">
 
                 <Picker.ItemsSource>
-                    <x:Array Type="{x:Type x:Double}">
-                        <x:Double>4</x:Double>
-                        <x:Double>6</x:Double>
-                        <x:Double>10</x:Double>
-                        <x:Double>20</x:Double>
-                        <x:Double>100</x:Double>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>4</x:String>
+                        <x:String>6</x:String>
+                        <x:String>10</x:String>
+                        <x:String>20</x:String>
+                        <x:String>100</x:String>
                     </x:Array>
                 </Picker.ItemsSource>
             </Picker>
             
  
             <Button
-                x:Name="Roll"
-                Text="Rolar o LADOS"
-                Clicked="Roller_Cliked"
+                BackgroundColor="#404040"
+                x:Name="RollButton"
+                Text="Rolar dado"
+                Clicked="RollDiceButton_Clicked"
              
                 />
 

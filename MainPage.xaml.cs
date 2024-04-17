@@ -8,16 +8,14 @@
         {
             InitializeComponent();
         }
-      private void Roller_Cliked(object sender, EventArgs e)
+      private void RollDiceButton_Clicked(object sender, EventArgs e)
         {
-            string? line = Console.ReadLine();
-            Random rnd = new Random();
-            if (!int.TryParse(line, out int picker) || picker <= 0)
-            {
-                picker = 10;
-            }
-            for (uint ctr = 1; ctr <= picker; ctr++)
-                Console.WriteLine($"{rnd.Next(),15:N0}");
+            
+            int selectedSides = Convert.ToInt32(picker.SelectedItem);           
+
+            int drawnNumber = new Random().Next(1, selectedSides + 1);
+            
+            ResultLabel.Text = drawnNumber.ToString();
         } 
         
 
