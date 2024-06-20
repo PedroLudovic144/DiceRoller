@@ -4,7 +4,7 @@
              x:Class="DiceRoller.MainPage">
 
     <ScrollView
-        Background="#cccccc"
+        Background=#000000"
         >
         <VerticalStackLayout
             Spacing="25"
